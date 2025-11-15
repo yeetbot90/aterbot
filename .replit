@@ -1,6 +1,7 @@
 hidden = [".config", "pnpm-lock.yaml", "tsconfig.json", ".gitignore"]
 compile = "clear"
 run = "pnpm run start"
+modules = ["nodejs-20"]
 
 [gitHubImport]
 	requiredFiles = [".replit", "replit.nix", ".config", "package.json", "pnpm-lock.yaml"]
@@ -18,3 +19,38 @@ run = "pnpm run start"
 		packageSearch = true
 		guessImports = true
 		enabledForHosting = false
+
+[agent]
+expertMode = true
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "AterBot"
+
+[[workflows.workflow]]
+name = "AterBot"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "pnpm start"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[[ports]]
+localPort = 42639
+externalPort = 3000
