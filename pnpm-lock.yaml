@@ -9,10 +9,10 @@ importers:
   .:
     dependencies:
       mineflayer:
-        specifier: ^4.20.0
+        specifier: ^4.33.0
         version: 4.33.0
       tsx:
-        specifier: ^4.7.1
+        specifier: ^4.20.6
         version: 4.20.6
 
 packages:
