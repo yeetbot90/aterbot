@@ -1,7 +1,6 @@
 hidden = [".config", "pnpm-lock.yaml", "tsconfig.json", ".gitignore"]
 compile = "clear"
 run = "pnpm run start"
-modules = ["nodejs-20", "bash", "nix"]
 
 [gitHubImport]
 	requiredFiles = [".replit", "replit.nix", ".config", "package.json", "pnpm-lock.yaml"]
@@ -9,7 +8,7 @@ modules = ["nodejs-20", "bash", "nix"]
 
 
 [nix]
-channel = "stable-25_05"
+	channel = "stable-23_05"
 
 
 [packager]
@@ -18,7 +17,4 @@ channel = "stable-25_05"
 	[packager.features]
 		packageSearch = true
 		guessImports = true
-		enabledForHosting = true
-
-[agent]
-expertMode = true
+		enabledForHosting = false
